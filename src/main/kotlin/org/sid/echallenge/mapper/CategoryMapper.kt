@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 @Component
 class CategoryMapper : EntityMapperService<CategoryEntity, CategoryDto> {
     override fun mapFromEntity(entity: CategoryEntity): CategoryDto {
-        return CategoryDto(entity.id!!, entity.name!!, entity.description!!);
+        return CategoryDto(entity.id!!, entity.name!!, entity.description!!)
     }
 
     override fun mapFromEntitiesList(entities: List<CategoryEntity>): List<CategoryDto> {

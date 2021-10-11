@@ -1,9 +1,9 @@
 package org.sid.echallenge.controllers
 
+import io.swagger.annotations.ApiOperation
 import org.sid.echallenge.dto.PageDto
 import org.sid.echallenge.entities.BaseEntity
 import org.sid.echallenge.services.CrudService
-import io.swagger.annotations.ApiOperation
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder

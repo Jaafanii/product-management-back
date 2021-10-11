@@ -16,7 +16,7 @@ class CategoryService(repository: CategoryRepository, categoryMapper: CategoryMa
     ) {
 
     override fun preSave(itemToSave: CategoryForm): CategoryEntity {
-       return constructEntity(itemToSave)
+        return constructEntity(itemToSave)
     }
 
     override fun preUpdate(itemToUpdate: CategoryForm, id: Long): CategoryEntity {

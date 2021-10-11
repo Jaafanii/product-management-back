@@ -8,7 +8,7 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.repository.JpaRepository
 
-abstract class CrudServiceImpl<Form, Dto, Entity:BaseEntity, Repository : JpaRepository<Entity, Long>, Mapper : EntityMapperService<Entity, Dto>>(
+abstract class CrudServiceImpl<Form, Dto, Entity : BaseEntity, Repository : JpaRepository<Entity, Long>, Mapper : EntityMapperService<Entity, Dto>>(
     var repository: Repository,
     var mapper: Mapper
 ) :
@@ -19,7 +19,7 @@ abstract class CrudServiceImpl<Form, Dto, Entity:BaseEntity, Repository : JpaRep
     }
 
     override fun findById(id: Long): Entity {
-        return repository.getById(id);
+        return repository.getById(id)
     }
 
     override fun getAll(currentPage: Int, size: Int): PageDto {
@@ -32,7 +32,7 @@ abstract class CrudServiceImpl<Form, Dto, Entity:BaseEntity, Repository : JpaRep
     }
 
     override fun save(itemToSave: Form): Entity {
-       return repository.save(preSave(itemToSave))
+        return repository.save(preSave(itemToSave))
 
     }
 

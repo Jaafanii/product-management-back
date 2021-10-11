@@ -22,7 +22,7 @@ class ProductServiceImp(
     ) {
 
     override fun preSave(itemToSave: ProductForm): ProductEntity {
-        return constructEntity(itemToSave);
+        return constructEntity(itemToSave)
     }
 
     override fun preUpdate(itemToUpdate: ProductForm, id: Long): ProductEntity {
@@ -34,7 +34,7 @@ class ProductServiceImp(
     private fun constructEntity(product: ProductForm): ProductEntity {
         val productEntity = ProductEntity()
         BeanUtils.copyProperties(product, productEntity)
-        productEntity.category = categoryService.findById(product.categoryId);
+        productEntity.category = categoryService.findById(product.categoryId)
         return productEntity
     }
 }
